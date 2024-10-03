@@ -1,0 +1,16 @@
+{% extends "main.html" %}
+{% block title %}{{ action }}{% endblock title %}
+{% block content %}
+<div class="container mt-5">
+     <h2 class="text-center">{{name}} Task {{task.id}}</h2>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary btn-block">{{ action }}</button>
+    </form>
+    <div>
+    <a href="{% url 'home' %}" class="btn btn-link mt-3">Back to home</a>
+    <a href="{% url 'list' %}" class="btn btn-link mt-3">Back to List</a>
+    </div>
+</div>
+{% endblock content %}

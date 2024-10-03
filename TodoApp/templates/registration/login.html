@@ -1,0 +1,32 @@
+{% extends "todo.html" %}
+{% block title %}Login{% endblock title %}
+{% block content %}
+    {% if form.erros %}
+        <p>Either the username or the password is wrong</p>
+    {% endif %}
+    {% if next %}
+        {% if request.user.is_authenticated %}
+            <p>You already logged in</p>
+            {% else %}
+            <p>Login</p>
+        {% endif %}
+    {% endif %}
+<div class='container mt-5'>
+    <h2 class='text-center'>Login</h2>
+    <form method='POST'>
+        {% csrf_token %}
+        <div class='form-group'>
+            <label for='id_username'>Username</label>
+            <input class='form-control' type='text' name='username' id='id_username' required>
+        </div>
+
+        <div class='form-group'>
+            <label for='id_password'>Password</label>
+            <input class='form-control' type='password' name='password' id='id_password' required>
+        </div><br>
+        <input type='submit' value='Login' class='btn btn-primary btn-block'>
+    </form>
+    <div class="mt-3">
+        <a href="{% url 'password-reset' %}">Forgot your password?</a>
+    </div>
+</div>{% endblock content %}

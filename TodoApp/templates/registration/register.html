@@ -1,0 +1,14 @@
+{% extends "todo.html" %}
+{% block title %}Register{% endblock title %}
+{% block content %}
+<div class='container mt-5'>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type='submit'  class="btn btn-primary">Register</button>
+    </form>
+    <div>
+        <a href='{% url "login" %}' class='btn btn-link mt-3'>Back to Login</a>
+    </div>
+</div>
+{% endblock content %}

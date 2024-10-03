@@ -1,0 +1,37 @@
+{% extends "todo.html" %}
+{% block title %}Task Deatils{% endblock title %}
+{% block content %}
+<div class='container mt-5'>
+    <h1 class='text-center'>{{task.title}}</h1>
+    <div class='card'>
+        <div class='card-header'>
+            <h5 class='card-title'>Task Deatils</h5>
+        </div>
+        <div class='card-body'>
+            <h6 class="card-subtitle mb-2 text-muted">Created at: {{ task.created_at }}</h6>
+            <p class='card-text'>{{task.description}}</p>
+            <p class='card-text'>
+                <strong>Priority:</strong>
+                {% if task.priority == "l"%}
+                Low
+                {% elif task.priority == "m"%}
+                Medium
+                {% else %}
+                High
+                {% endif %}
+            </p>
+            <p class='card-text'>
+                <strong>Status:</strong>
+                {% if task.completed %}
+                <span class="badge bg-success">Completed</span>
+                {% else %}
+                <span class="badge bg-danger">Pending</span>
+                {% endif %} 
+            </p><br>
+            <a href='{% url "edit" task.id %}' class='btn btn-primary'>Edit Task</a>
+            <a href='{% url "list" %}' class='btn btn-secondary'>Back ta Task List</a>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

@@ -1,0 +1,35 @@
+{% extends "todo.html" %}
+{% load static %}
+{% block title %}
+Home
+{% endblock title %}
+{% block link %}
+{% static "css/style.css" %}
+{% endblock link %}
+{% block content %}
+
+<div class="text-center mt-5">
+    <h1 class="display-4"><b>Welcome to Your To-Do List!</b></h1>
+    <p class="lead">Keep track of your tasks and boost your productivity.</p>
+    {% if request.user.is_authenticated %}
+        <div>
+            <a href='{% url "add" %}' class="btn btn-primary btn-lg">Add Task</a>
+            <a href='{% url "list" %}' class="btn btn-primary btn-lg">My List</a>
+        </div>
+        <div class="bottom-right">
+        <form action='{% url "logout" %}?next=/accounts/login'  method='POST'>
+
+            {% csrf_token %}
+            <a href='{% url "password-change" %}' class='btn btn-primary btn-block'>ChangePassword</a>
+            <button type='submit' class='logout-link'>Logout</button>
+        </form>
+        </div>
+        {% else %}
+        <div>
+            <a href='{% url "login" %}' class="btn btn-primary btn-lg">Login</a>
+        </div>
+    {% endif %}
+
+</div>
+{% endblock content %}
+
