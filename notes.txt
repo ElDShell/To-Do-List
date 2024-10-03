@@ -5,3 +5,4 @@ and search about 'app passwords' go to it and then you can add your own app
 
 
 Note : Categories can be add by using admin site only so make a superuser 
+Note : DEBUG = True in settings.py you can change it to Fasle if you want
