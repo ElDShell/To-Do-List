@@ -1,0 +1,7 @@
+if you wnat to use the password reset using email 
+go to settings.py then go to EMAIL_HOST_USER and write your email password
+then go to EMAIL_HOST_PASSWORD and wirte your app password you can do that by going to your email settings
+and search about 'app passwords' go to it and then you can add your own app
+
+
+Note : Categories can be add by using admin site only so make a superuser 

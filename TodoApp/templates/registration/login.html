@@ -27,6 +27,7 @@
         <input type='submit' value='Login' class='btn btn-primary btn-block'>
     </form>
     <div class="mt-3">
+        <a href="{% url 'register' %}" class = 'btn btn-primary btn-block'>Register</a><br>
         <a href="{% url 'password-reset' %}">Forgot your password?</a>
     </div>
 </div>{% endblock content %}
