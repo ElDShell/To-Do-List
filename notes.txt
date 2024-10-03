@@ -1,7 +1,0 @@
-To activate the reset email feature, navigate to settings.py, locate the EMAIL_HOST_USER setting,
-and replace it with your email address.
-
-And navigate to EMAIL_HOST_PASSWORD, replacing it with your app password.
-
-To create an app password, access your email settings, search for "app passwords," 
-and follow the instructions to set a password specifically for this purpose.
